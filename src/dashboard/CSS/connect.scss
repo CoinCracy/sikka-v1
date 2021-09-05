@@ -1,0 +1,41 @@
+#navbar {
+    background: linear-gradient(293.74deg, #1556D9 22.95%, #1D69FC 93.7%);
+    height: 70px;
+    padding: 10px;
+    display: flex;
+}
+#navbar h2 {
+    margin : 0;
+    color : white;
+}
+.navbarHead {
+    background: linear-gradient(293.74deg, #1556D9 22.95%, #1D69FC 93.7%);
+}
+.sikkaHeader {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    .headerImage {
+        margin: auto 10px auto 124px;
+    }
+    .header{
+        display: flex;
+        align-self: center;
+        color: whitesmoke;
+    }
+}
+.connect-button{
+    position: absolute;
+   top : 10px; 
+   right : 20px;
+    padding:10px;
+    cursor: pointer;
+    background-color: #082032;
+    border-radius: 20px;
+    color: whitesmoke;
+}
+.connect-button:hover{
+    background-color : #000000;
+   color:white;
+   transition-duration: 0.3s;
+}
