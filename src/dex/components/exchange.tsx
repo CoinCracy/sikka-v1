@@ -7,6 +7,8 @@ import { useWallet } from "../utils/wallet";
 import { AccountInfo } from "./accountInfo";
 import { Settings } from "./settings";
 import { SettingOutlined } from "@ant-design/icons";
+import { getAllTokens } from "../utils/tokenAction";
+
 
 export const ExchangeView = (props: {}) => {
   const { connected, wallet } = useWallet();

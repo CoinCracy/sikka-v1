@@ -11,12 +11,15 @@ import Dashboard from './dashboard/components/Dashboard.jsx';
 import TokenDashboard from './dashboard/components/tokenDashboard';
 import DexApp from "./dex/App";
 import { ExchangeView } from './dex/components/exchange';
+import { getAllTokens } from './dex/utils/tokenAction';
 
 function App() {
 
 const [ provider, setProvider ] = useState() 
 const [token , setToken ] = useState({ mintAddress : null , accountAddress : null })
-  return (
+
+
+return (
    <>
 <Router>
 <Connect setProvider = {setProvider}/>

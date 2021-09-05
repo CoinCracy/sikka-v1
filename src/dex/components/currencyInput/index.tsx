@@ -30,6 +30,21 @@ export const CurrencyInput = (props: {
 
   const { env } = useConnectionConfig();
 
+  const mintedTokens : string = localStorage.getItem("mintedTokens")!;
+// console.log(JSON.parse(mintedTokens))
+// var temp = {
+//   "tokenSymbol": "HO",
+//   "mintAddress": "DJafV9qemGp7mLMEn5wrfqaFwxsbLgUsGVS16zKRk9kc",
+//   "tokenName": "Wrapped HXRO",
+//   "icon": "https://raw.githubusercontent.com/trustwallet/assets/878dcab0fab90e6593bcb9b7d941be4915f287dc/blockchains/ethereum/assets/0xb2734a4Cec32C81FDE26B0024Ad3ceB8C9b34037/logo.png"
+// }
+
+let ok = 0;
+if(mintedTokens && !ok) {
+  PopularTokens.devnet.push(JSON.parse(mintedTokens));
+  ok=1;
+}
+  console.log(PopularTokens);
   const tokens = PopularTokens[env] as KnownToken[];
 
   const renderPopularTokens = tokens.map((item) => {

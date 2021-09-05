@@ -9,6 +9,7 @@ import {
 import React, { useContext, useEffect, useMemo } from "react";
 import { setProgramIds } from "./ids";
 import { notify } from "./notifications";
+import { getAllTokens } from "./tokenAction";
 
 export type ENV = "mainnet-beta" | "testnet" | "devnet" | "localnet";
 
@@ -23,7 +24,7 @@ export const ENDPOINTS = [
 ];
 
 const DEFAULT = ENDPOINTS[0].endpoint;
-const DEFAULT_SLIPPAGE = 0.25;
+const DEFAULT_SLIPPAGE = 1;
 
 interface ConnectionConfig {
   connection: Connection;

@@ -9,7 +9,6 @@ import { createNewToken , createTokenAccount, createAssociatedTokenAccount, mint
 import { getNodeRpcURL, getTxExplorerURL, getNodeWsURL ,getAccountExplorerURL  } from '../lib/utils';
 import { Token, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import TokenSteps from './TokenSteps';
-const fs = require('fs');
 
 function TokenCreator(props) {
 
@@ -66,6 +65,8 @@ async function createToken() {
           tokenName : name,
           icon: "https://raw.githubusercontent.com/trustwallet/assets/08d734b5e6ec95227dc50efef3a9cdfea4c398a1/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png",
       }
+
+      localStorage.setItem("mintedTokens", JSON.stringify(newObj));
       
       // try {
       //   const jsonString = fs.readFileSync("../../dex/utils/token-list.json", "utf-8");

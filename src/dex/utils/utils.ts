@@ -4,6 +4,7 @@ import { MintInfo } from "@solana/spl-token";
 import PopularTokens from "./token-list.json";
 import { ENV } from "./connection";
 import { PoolInfo, TokenAccount } from "./../models";
+import { getAllTokens } from "./tokenAction";
 
 export interface KnownToken {
   tokenSymbol: string;
@@ -12,17 +13,28 @@ export interface KnownToken {
   mintAddress: string;
 }
 
-const AddressToToken = Object.keys(PopularTokens).reduce((map, key) => {
-  const tokens = PopularTokens[key as ENV] as KnownToken[];
-  const knownMints = tokens.reduce((map, item) => {
-    map.set(item.mintAddress, item);
+let ok = 0;
+function redoToken () {
+  const mintedTokens : string = localStorage.getItem("mintedTokens")!;
+  if(mintedTokens) {
+    PopularTokens.devnet.push(JSON.parse(mintedTokens));
+    localStorage.removeItem("mintedTokens");
+  }
+
+  const AddressToToken = Object.keys(PopularTokens).reduce((map, key) => {
+    const tokens = PopularTokens[key as ENV] as KnownToken[];
+    const knownMints = tokens.reduce((map, item) => {
+      map.set(item.mintAddress, item);
+      return map;
+    }, new Map<string, KnownToken>());
+  
+    map.set(key as ENV, knownMints);
+  
     return map;
-  }, new Map<string, KnownToken>());
+  }, new Map<ENV, Map<string, KnownToken>>());
 
-  map.set(key as ENV, knownMints);
-
-  return map;
-}, new Map<ENV, Map<string, KnownToken>>());
+  return AddressToToken;
+}
 
 export function useLocalStorageState(key: string, defaultState?: string) {
   const [state, setState] = useState(() => {
@@ -59,7 +71,7 @@ export function shortenAddress(address: string, chars = 4): string {
 }
 
 export function getTokenName(env: ENV, mintAddress: string): string {
-  const knownSymbol = AddressToToken.get(env)?.get(mintAddress)?.tokenSymbol;
+  const knownSymbol = redoToken().get(env)?.get(mintAddress)?.tokenSymbol;
   if (knownSymbol) {
     return knownSymbol;
   }
@@ -71,7 +83,7 @@ export function getTokenIcon(
   env: ENV,
   mintAddress: string
 ): string | undefined {
-  return AddressToToken.get(env)?.get(mintAddress)?.icon;
+  return redoToken().get(env)?.get(mintAddress)?.icon;
 }
 
 export function getPoolName(env: ENV, pool: PoolInfo) {
@@ -80,7 +92,7 @@ export function getPoolName(env: ENV, pool: PoolInfo) {
 }
 
 export function isKnownMint(env: ENV, mintAddress: string) {
-  return !!AddressToToken.get(env)?.get(mintAddress);
+  return !!redoToken().get(env)?.get(mintAddress);
 }
 
 export function convert(
