@@ -7,7 +7,9 @@ import {
   SystemProgram
 } from "@solana/web3.js";
 import "../CSS/connect.scss"
-
+import Drawer from "./Drawer";
+import { useParams , useHistory, Link } from "react-router-dom";
+import { Button } from "antd";
 
 type DisplayEncoding = "utf8" | "hex";
 type PhantomEvent = "disconnect" | "connect";
@@ -84,9 +86,11 @@ export default function Connect(props : any) {
 
   return (
   <div id = "navbar"> 
+
   <div className="sikkaHeader" >
+  <Drawer/>
     <img src="sikkaLogo.svg" className ="headerImage" />
-    <h2  className ="header">Sikka - Democratizing Tokens</h2>
+    <h2  className ="header">Sikka - Democratizing Token</h2>
   </div>
     <div id="connect-button"> 
       <main>
@@ -97,12 +101,17 @@ export default function Connect(props : any) {
             </div>
             {/* <div>autoApprove: {provider.autoApprove ? "true" : "false"} </div> */}
             {/* <button onClick={() => provider.disconnect()}>Disconnect</button> */}
+            <div className="connect-button1"><Link to="/DEX" type="button">DEX</Link></div>
+            <div className="connect-button2"><Link to="/Dashboard" type="button">Dashboard</Link></div>
           </>
         ) : (
           <>
+            <div className="connect-button1"><Link to="/DEX" type="button">DEX</Link></div>
+            <div className="connect-button2"><Link to="/Dashboard" type="button">Dashboard</Link></div>
             <div className ="connect-button" onClick={() => provider?.connect()}>
               Connect
             </div>
+
           </>
         )}
       </main>

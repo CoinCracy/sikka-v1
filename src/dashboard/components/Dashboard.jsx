@@ -103,7 +103,7 @@ function Dashboard(props) {
       <hr></hr>
       <h1  className="dashboardHeader"> 
           Dashboard 
-          <Link to="/DEX" type="button">DEX</Link>
+          {/* <Link to="/DEX" type="button">DEX</Link> */}
       </h1>
       
       {dataLoaded ? (
