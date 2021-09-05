@@ -93,13 +93,14 @@ function TransferModal(props) {
   return (
     <div className="transfer-modal">
       <label className="label" htmlFor="#amount">Amount</label>
-      <input  className ="decimals" type="text" id="amount"></input>
+      <input  className ="decimals" placeholder='Enter no. of coins' type="text" id="amount"></input>
 
       <label className="label"  htmlFor="#recipient">Receiver</label>
-      <input  className ="decimals" type="text" id="recipient"></input>
+      <input  className ="decimals"  placeholder='Enter the receiver’s address' type="text" id="recipient"></input>
 
       <button
-         className = "transfer-button" 
+         className = "transfer-button align-left" 
+    
         onClick={() =>
           transfer(
             document.getElementById("amount").value,

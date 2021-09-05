@@ -13,7 +13,7 @@ const TokenSteps = ({
         switch(step) {
             case 1:
                 return  <>
-                    <Button variant="contained" color="secondary">Step 1</Button> <br/>
+                    <Button variant="contained">Step 1</Button> <br/>
                     <p><Text>Create your token</Text></p>
                            <Input id="name" className = "name" placeholder= "Name" type="text"></Input><br/>
                            <Input id="symbol" className = "symbol" placeholder= "Symbol" type="text"></Input><br/>
@@ -23,12 +23,12 @@ const TokenSteps = ({
             case 2:
 
                 return  <>
-                        <Button variant="contained" color="secondary">Step 2</Button> <br/>
+                        <Button variant="contained">Step 2</Button> <br/>
                         <Button variant="contained" color="primary" className ="initialization-button" onClick={ onClick } > Initialize A Token Account </Button>        
                         </>
             case 3:
                 return  <>
-                            <Button variant="contained" color="secondary">Step 3</Button> <br/>            
+                            <Button variant="contained">Step 3</Button> <br/>            
                             <Input id="token-supply"  className = "decimals" placeholder= "Token Supply" type="text"></Input><br/>
                             <Button variant="contained" color="primary" className = "decimals-button" onClick={() =>  onClick()} > Mint Tokens</Button>
                         </>

@@ -3,7 +3,7 @@
     flex-direction: column;
     padding: 20px;
     .label{
-        font-family: DM Sans;
+        font-family: sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
@@ -33,8 +33,6 @@
     .formBlock {
         display: flex;
         flex-direction: column;
-
-
     }
     .footerClass {
         display: flex;
@@ -55,4 +53,7 @@
     color: white;
     border: none;
     margin-top: 20px;
+}
+.align-left {
+    align-self: flex-end;
 }

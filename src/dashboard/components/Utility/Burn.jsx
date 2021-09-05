@@ -56,11 +56,12 @@ function BurnModal(props) {
   }
 
   return (
-    <div className="burn-modal">
-      <label htmlFor="#burnamount">Amount</label>
-      <input type="text" id="burnamount"></input>
+    <div  className="transfer-modal">
+      <label  className="label" htmlFor="#burnamount">Amount</label>
+      <input className ="decimals" placeholder='Enter no. of coins' type="text" id="burnamount"></input>
 
       <button
+        className = "transfer-button align-left" 
         onClick={() =>
           burn(
             document.getElementById("burnamount").value,

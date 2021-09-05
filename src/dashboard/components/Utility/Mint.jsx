@@ -6,6 +6,7 @@ import {
 
 import { PublicKey } from "@solana/web3.js";
 import { TOKEN_PROGRAM_ID } from "@solana/spl-token";
+import "../../CSS/transfer.scss"
 const getProvider = () => {
   if ("solana" in window) {
     const provider = window.solana;
@@ -76,14 +77,15 @@ function MintModal(props) {
   }
 
   return (
-    <div className="mint-modal">
-      <label htmlFor="#mintamount">Amount</label>
-      <input type="text" id="mintamount"></input>
+    <div className="transfer-modal">
+      <label  className="label" htmlFor="#mintamount">Amount</label>
+      <input className ="decimals"  placeholder='Enter no. of coins' type="text" id="mintamount"></input>
 
-      <label htmlFor="#mintrecipient">Receiver</label>
-      <input type="text" id="mintrecipient"></input>
+      <label  className="label" htmlFor="#mintrecipient">Receiver</label>
+      <input  placeholder='Enter the receiver’s address' className ="decimals" type="text" id="mintrecipient"></input>
 
       <button
+        className = "transfer-button align-left" 
         onClick={() =>
           mint(
             document.getElementById("mintamount").value,

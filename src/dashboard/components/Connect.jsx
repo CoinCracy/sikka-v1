@@ -48,7 +48,7 @@ const getProvider = () => {
 
 return (
     <div>
-        {connected ? <p>{provider.publicKey.toString()}</p> : <button onClick ={() => provider.connect()}>Connect</button> }
+        {connected ? <p>Connected</p> : <button onClick ={() => provider.connect()}>Connect</button> }
 </div>
 )
 

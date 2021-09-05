@@ -57,11 +57,12 @@ function FreezeModal(props) {
   }
 
   return (
-    <div className="freeze-modal">
-      <label htmlFor="#freezerecipient">Account to Freeze</label>
-      <input type="text" id="freezerecipient"></input>
+    <div className="transfer-modal">
+      <label className="label" htmlFor="#freezerecipient">Account to Freeze</label>
+      <input className ="decimals" placeholder='Enter no. of coins' type="text" id="freezerecipient"></input>
 
       <button
+        className = "transfer-button align-left" 
         onClick={() =>
           freeze(
             document.getElementById("freezerecipient").value

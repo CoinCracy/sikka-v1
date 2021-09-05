@@ -97,7 +97,7 @@ export default function Connect(props : any) {
         {provider && provider.publicKey ? (
           <>
             <div className ="connect-button" onClick={() => provider.disconnect()}> 
-            {provider.publicKey?.toBase58().slice(0,5)}... {provider.publicKey?.toBase58().slice(-5)}
+            Connected
             </div>
             {/* <div>autoApprove: {provider.autoApprove ? "true" : "false"} </div> */}
             {/* <button onClick={() => provider.disconnect()}>Disconnect</button> */}
