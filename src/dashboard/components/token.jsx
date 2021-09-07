@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 import React , {useState , useEffect} from 'react'
 import { Connection,  clusterApiUrl , PublicKey} from "@solana/web3.js";
 import Dashboard from './Dashboard';
@@ -30,12 +31,7 @@ function TokenCreator(props) {
 
   const getConnection = () => connection;
 
-  useEffect(() => {
 
-    return () => {
-      
-    }
-  },[])
   
   const  dash = () => {
     let path = `Dashboard`; 
@@ -67,13 +63,6 @@ async function createToken() {
       }
 
       localStorage.setItem("mintedTokens", JSON.stringify(newObj));
-      
-      // try {
-      //   const jsonString = fs.readFileSync("../../dex/utils/token-list.json", "utf-8");
-      //   console.log(jsonString);
-      // } catch(err) {
-      //   console.log(err);
-      // }
 
       setStep(2)
       })
@@ -110,6 +99,7 @@ const tokenSupply = document.getElementById("token-supply").value
  props.setToken({mintAddress : tokenAddress , accountAddress : tokenAccountAddress })
  setStep(4)
 }
+
 const getId = (step) => {
   switch(step) {
     case 1 :
@@ -138,6 +128,7 @@ const getOnClick = (step) => {
 }
 
 return (
+  
   <TokenSteps 
     step={step}
     id={getId(step)}

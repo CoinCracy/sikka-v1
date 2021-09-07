@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 import React, { useEffect, useState, Fragment } from "react";
 import { useParams } from 'react-router-dom'
 import TransferModal from './Utility/Transfer'
@@ -85,17 +86,19 @@ function TokenDashboard(props) {
   })
   return (
     <Fragment>
-      <div className='main-container'>
+      <div className='main-container rounded-lg shadow-lg bg-grey-500'>
         <TabControls
           menuItems={COIN_MANAGE_TABS}
           selectedItem={activeTab}
-          containerClassName="searchResultMenu"
+          containerClassName=" bg-grey-100 shadow-sm font-bold font-sans"
           hidden={false}
           onMenuItemClick={handleTabClick}
         />
-        <div className="tabContainer">
+        <div className=" shadow-sm bg-grey-300">
           <div className="tabs">
+            <div className ="transfer-modal">
             {renderTabContent()}
+            </div>
           </div>
         </div>
       </div>

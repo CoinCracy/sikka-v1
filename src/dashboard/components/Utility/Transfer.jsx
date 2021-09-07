@@ -91,15 +91,15 @@ function TransferModal(props) {
   }
 
   return (
-    <div className="transfer-modal">
+    <>
       <label className="label" htmlFor="#amount">Amount</label>
-      <input  className ="decimals" placeholder='Enter no. of coins' type="text" id="amount"></input>
+      <input  className="focus:ring-indigo-500 focus:border-indigo-500 block w-full text-black mb-5 duration-100 p-2 sm:text-sm border-gray-300 rounded-md" autocomplete="off" placeholder='Token Amount' type="text" id="amount"></input>
 
       <label className="label"  htmlFor="#recipient">Receiver</label>
-      <input  className ="decimals"  placeholder='Enter the receiver’s address' type="text" id="recipient"></input>
+      <input  className="focus:ring-indigo-500 focus:border-indigo-500 block w-full text-black mb-5 duration-100 p-2 sm:text-sm border-gray-300 rounded-md" autocomplete="off"  placeholder='Receiver’s address' type="text" id="recipient"></input>
 
       <button
-         className = "transfer-button align-left" 
+         className = "p-2 mb-30 rounded-md shadow-lg bg-indigo-500 mt-5 hover:shadow-xl duration-300 hover:bg-indigo-600"
     
         onClick={() =>
           transfer(
@@ -110,7 +110,7 @@ function TransferModal(props) {
       >
         Transfer
       </button>
-    </div>
+    </>
   );
 }
 

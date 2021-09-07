@@ -57,12 +57,12 @@ function FreezeModal(props) {
   }
 
   return (
-    <div className="transfer-modal">
+    <>
       <label className="label" htmlFor="#freezerecipient">Account to Freeze</label>
-      <input className ="decimals" placeholder='Enter no. of coins' type="text" id="freezerecipient"></input>
+      <input className="focus:ring-indigo-500 focus:border-indigo-500 block w-full text-black mb-5 duration-100 p-2 sm:text-sm border-gray-300 rounded-md" autocomplete="off" placeholder='Token Amount' type="text" id="freezerecipient"></input>
 
       <button
-        className = "transfer-button align-left" 
+         className = "p-2 mb-30 rounded-md shadow-lg bg-indigo-500 mt-5 hover:shadow-xl duration-300 hover:bg-indigo-600" 
         onClick={() =>
           freeze(
             document.getElementById("freezerecipient").value
@@ -71,7 +71,7 @@ function FreezeModal(props) {
       >
         Freeze
       </button>
-    </div>
+    </>
   );
 }
 

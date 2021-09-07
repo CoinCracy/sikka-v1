@@ -7,7 +7,6 @@ import {
   SystemProgram
 } from "@solana/web3.js";
 import "../CSS/connect.scss"
-import Drawer from "./Drawer";
 import { useParams , useHistory, Link } from "react-router-dom";
 import { Button } from "antd";
 
@@ -85,37 +84,45 @@ export default function Connect(props : any) {
 
 
   return (
-  <div id = "navbar"> 
 
-  <div className="sikkaHeader" >
-  <Drawer/>
-    <img src="sikkaLogo.svg" className ="headerImage" />
-    <h2  className ="header">Sikka - Democratizing Token</h2>
-  </div>
-    <div id="connect-button"> 
-      <main>
+<div className="lg:flex lg:items-center lg:justify-between  p-2 ">
+      <div className="flex-1 min-w-0">
+      <img src="sikkaLogo.svg" className ="bg-indigo-800 w-10 h-10 ml-20 rounded-full"  />
+ 
+      </div>
+      <div className="mt-5 flex lg:mt-0 lg:ml-4">
+        <span className="hidden sm:block">
+          <button
+           
+            className="inline-flex items-center px-4 py-2 duration-200 hover:text-black rounded-md shadow-sm hover:shadow-md text-sm font-medium text-gray-700 bg-white "
+          >
+             <Link to="/Dashboard" type="button">Dashboard</Link>
+          </button>
+        </span>
+
+        <span className="hidden sm:block ml-3">
+          <button
+            className="inline-flex items-center px-4 py-2 duration-200 hover:text-indigo-800 rounded-md hover:shadow-md shadow-sm text-sm font-medium text-gray-700 bg-white "
+          >
+           <Link to="/Exchange" type="button">Exchange</Link>
+        
+          </button>
+        </span>
+
+        <span className="sm:ml-3">
         {provider && provider.publicKey ? (
-          <>
-            <div className ="connect-button" onClick={() => provider.disconnect()}> 
-            Connected
-            </div>
-            {/* <div>autoApprove: {provider.autoApprove ? "true" : "false"} </div> */}
-            {/* <button onClick={() => provider.disconnect()}>Disconnect</button> */}
-            <div className="connect-button1"><Link to="/DEX" type="button">DEX</Link></div>
-            <div className="connect-button2"><Link to="/Dashboard" type="button">Dashboard</Link></div>
-          </>
-        ) : (
-          <>
-            <div className="connect-button1"><Link to="/DEX" type="button">DEX</Link></div>
-            <div className="connect-button2"><Link to="/Dashboard" type="button">Dashboard</Link></div>
-            <div className ="connect-button" onClick={() => provider?.connect()}>
-              Connect
-            </div>
+           <button  className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={() => provider.disconnect()}> 
+             {provider.publicKey.toString().slice(0,4)}...{provider.publicKey.toString().slice(-4)}  
+           </button>
+    ) : (
+          <button  className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={() => provider?.connect()}>
+           Connect
+             </button>
+       )}
+        </span>
 
-          </>
-        )}
-      </main>
-    </div>
+
+      </div>
     </div>
   );
 }

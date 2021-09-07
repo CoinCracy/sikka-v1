@@ -36,7 +36,7 @@ return (
 <TokenDashboard/>
  </Route>
 
- <Route exact path="/dex">
+ <Route exact path="/Exchange">
    <ExchangeView/>
  </Route>
  </Router>

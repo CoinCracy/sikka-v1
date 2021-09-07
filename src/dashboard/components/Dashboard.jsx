@@ -100,10 +100,78 @@ function Dashboard(props) {
 
   return (
     <>
-      <hr></hr>
-      <h1  className="dashboardHeader"> 
+ {dataLoaded ? 
+
+      <div className="flex flex-col ">
+      <h2 className = "text-indigo-800 font-bold text-lg text-center"> Token List </h2>
+      <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+          <div className="shadow overflow-hidden border-b border-indigo-100 sm:rounded-lg">
+            <table className="min-w-full divide-y divide-indigo-100">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-center text-xs ml-4 font-medium text-indigo-500 uppercase tracking-wider"
+                  >
+                   Mint
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-center text-xs font-medium text-indigo-500 uppercase tracking-wider"
+                  >
+                   Account
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-center text-xs font-medium text-indigo-500 uppercase tracking-wider"
+                  >
+                    Total Supply
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-center text-xs font-medium text-indigo-500 uppercase tracking-wider"
+                  >
+                    Balance
+                  </th>
+                  
+                  <th scope="col" className="relative px-6 py-3">
+                    <span className="sr-only">Manage</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                {tokenData.map((token) => (
+                  <tr key={token.id}>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="flex items-center">
+                          <div className="text-sm font-medium text-gray-900">{token.mint}</div>
+                      </div>
+                    </td>
+                    <td>
+                    <div className="text-sm font-medium text-gray-500">{token.account}</div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                     
+                      <div className="text-sm text-gray-900">{token.supply}</div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm text-gray-500">{token.balance}</div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <button  className="bg-indigo-500 text-white p-1 rounded-lg duration-300 hover:bg-indigo-800 " onClick={()=> manage(token.mint) }>Manage</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    : <p className = "text-black">Loading</p>}
+      {/* <h1  className="dashboardHeader"> 
           Dashboard 
-          {/* <Link to="/DEX" type="button">DEX</Link> */}
       </h1>
       
       {dataLoaded ? (
@@ -118,7 +186,7 @@ function Dashboard(props) {
         </div>
       ) : (
         <h1 className="dashboardHeader">Loading...</h1>
-      )}
+      )} */}
     </>
   );
 }

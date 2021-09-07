@@ -10,10 +10,10 @@ const TabControls = ({
     const [fixHeader, setHeaderFixed] = useState(0);
 
     return (
-        <div className="container containerClassName" >
+        <div className="container text-black bg-gray-100 rounded-lg font-sans" >
             <div
                 ref={tabContainerRef}
-                className={`wrapper subContainerClassName `}
+                className={`wrapper bg-gray-200 text-center`}
             >
                 {
                     menuItems.map(item => {

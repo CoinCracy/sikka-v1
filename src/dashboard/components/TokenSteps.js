@@ -13,27 +13,32 @@ const TokenSteps = ({
         switch(step) {
             case 1:
                 return  <>
-                    <Button variant="contained">Step 1</Button> <br/>
-                    <p><Text>Create your token</Text></p>
-                           <Input id="name" className = "name" placeholder= "Name" type="text"></Input><br/>
-                           <Input id="symbol" className = "symbol" placeholder= "Symbol" type="text"></Input><br/>
-                            <Input id="decimals" className = "decimals" placeholder= "Decimals" type="text"></Input><br/>
-                            <button variant="contained" color="primary" className = "decimals-button" onClick={  onClick } >Create Token </button>
+                    <button className="font-mono font-normal text-indigo-800">STEP-1</button>
+                    <br/>
+                    <p className="text-indigo-500 text-lg tracking-wide font-bold ">Initialize Token Mint</p>
+
+                         <input type="text" name="name" id="name" className="focus:ring-indigo-500 focus:border-indigo-500 block w-80 text-black mb-5 duration-100 p-2 sm:text-sm border-gray-300 rounded-md" autocomplete="off" placeholder="Name" />
+                         <input type="text" name="symbol" id="symbol" className="focus:ring-indigo-500 focus:border-indigo-500 block text-black w-80 mb-5 duration-100 p-2 sm:text-sm border-gray-300 rounded-md" autocomplete="off" placeholder="Symbol" />
+                            <input id="decimals"  className="focus:ring-indigo-500 focus:border-indigo-500 block w-80 mb-5 duration-100 p-2 text-black sm:text-sm border-gray-300 rounded-md" autocomplete="off" placeholder= "Decimals" type="text"></input><br/>
+                            <button variant="contained" color="primary" className = "p-2 mb-30 rounded-md shadow-lg bg-indigo-500 hover:shadow-xl duration-300 hover:bg-indigo-600" onClick={  onClick } >Create Token </button>
                         </>
             case 2:
 
                 return  <>
-                        <Button variant="contained">Step 2</Button> <br/>
-                        <Button variant="contained" color="primary" className ="initialization-button" onClick={ onClick } > Initialize A Token Account </Button>        
-                        </>
+                        <button className="font-mono font-normal text-indigo-800" >Step 2</button> <br/>
+                        <button variant="contained" color="primary"  className = "p-2 mb-30 rounded-md shadow-lg bg-indigo-500 hover:shadow-xl duration-300 hover:bg-indigo-600" onClick={ onClick } > Create an account to manage tokens </button>        
+                        </> 
             case 3:
-                return  <>
-                            <Button variant="contained">Step 3</Button> <br/>            
-                            <Input id="token-supply"  className = "decimals" placeholder= "Token Supply" type="text"></Input><br/>
-                            <Button variant="contained" color="primary" className = "decimals-button" onClick={() =>  onClick()} > Mint Tokens</Button>
+         return  <> 
+                            <button className="font-mono font-normal text-indigo-800" >Step 3</button> <br/>            
+                            <input id="token-supply"  className="focus:ring-indigo-500 focus:border-indigo-500 block text-black w-80 mb-5 duration-100 p-2 sm:text-sm border-gray-300 rounded-md" autocomplete="off" placeholder= "Token Supply" type="text"></input><br/>
+                            <button variant="contained" color="primary" className = "p-2 mb-30 rounded-md shadow-lg bg-indigo-500 hover:shadow-xl duration-300 hover:bg-indigo-600" onClick={() =>  onClick()} > Mint Tokens</button>
                         </>
-            case 4: 
-                return  <button  className = "decimals-button"  onClick={ onClick }> Dashboard</button>
+            case 4:  
+                return <>
+                <p className="text-black font-sans    "> Congratulations your token has been successfully created, check it out in the dashboard! </p>
+                  <button   className = "p-2 mb-30 rounded-md shadow-lg bg-indigo-500 hover:shadow-xl duration-300 hover:bg-indigo-600" onClick={ onClick }> Dashboard</button>
+                  </>
 
             default:
           }
@@ -41,7 +46,7 @@ const TokenSteps = ({
     }
 
     return (
-        <div id="create-token">
+        <div id="create-token" className=" ">
           <div className = "step" id={`${id}`}>
               {findStep()}
           </div>
