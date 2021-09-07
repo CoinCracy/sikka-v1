@@ -86,35 +86,22 @@ export default function Connect(props : any) {
 
   return (
   <div id = "navbar"> 
-
-  <div className="sikkaHeader" >
-  <Drawer/>
-    <img src="sikkaLogo.svg" className ="headerImage" />
-    <h2  className ="header">Sikka - Democratizing Token</h2>
-  </div>
-    <div id="connect-button"> 
-      <main>
-        {provider && provider.publicKey ? (
-          <>
-            <div className ="connect-button" onClick={() => provider.disconnect()}> 
-            Connected
-            </div>
-            {/* <div>autoApprove: {provider.autoApprove ? "true" : "false"} </div> */}
-            {/* <button onClick={() => provider.disconnect()}>Disconnect</button> */}
-            <div className="connect-button1"><Link to="/DEX" type="button">DEX</Link></div>
-            <div className="connect-button2"><Link to="/Dashboard" type="button">Dashboard</Link></div>
-          </>
-        ) : (
-          <>
-            <div className="connect-button1"><Link to="/DEX" type="button">DEX</Link></div>
-            <div className="connect-button2"><Link to="/Dashboard" type="button">Dashboard</Link></div>
-            <div className ="connect-button" onClick={() => provider?.connect()}>
-              Connect
-            </div>
-
-          </>
-        )}
-      </main>
+    <a href="/app">
+    <div className="sikkaHeader" >
+      <img src="sikkaLogo.svg" className ="headerImage" />
+      <span className ="header">Sikka - Democratizing Token</span>
+    </div>
+    </a>
+    <div className="navbar-buttons"> 
+      <ul>
+      {(provider && provider.publicKey) ? (
+          <li onClick={() => provider.disconnect()}>Connected</li>
+      ) : (
+          <li onClick={() => provider?.connect()}>Connect</li>
+      )}
+      <li><Link to="/dashboard" type="button">Dashboard</Link></li>
+      <li><Link to="/dex" type="button">DEX</Link></li>
+        </ul>
     </div>
     </div>
   );

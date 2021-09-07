@@ -46,6 +46,7 @@ function SikkaLandingPage(props) {
     return (
         <Fragment>
         <div className = 'main-container'>
+            <div className = 'card-container'>
             <TabControls
                 menuItems={COIN_TYPE_TABS}
                 selectedItem={activeTab}
@@ -57,6 +58,7 @@ function SikkaLandingPage(props) {
                 <div className="tabs">
                     {renderTabContent()}
                 </div>
+            </div>
             </div>
          </div>
         </Fragment>

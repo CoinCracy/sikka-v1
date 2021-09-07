@@ -1,8 +1,8 @@
 #navbar {
     background: linear-gradient(293.74deg, #1556D9 22.95%, #1D69FC 93.7%);
-    height: 70px;
+    height: 85px;
     padding: 10px;
-    display: flex;
+    position: relative;
 }
 #navbar h2 {
     margin : 0;
@@ -13,61 +13,49 @@
 }
 .sikkaHeader {
     display: flex;
+    margin-top: 10px;
     justify-self: center;
     align-self: center;
     .headerImage {
         margin: auto 10px auto 124px;
     }
     .header{
+        font-size: large;
         display: flex;
         align-self: center;
         color: whitesmoke;
     }
 }
-.connect-button{
-    position: absolute;
-   top : 10px; 
-   right : 20px;
-    padding:10px;
-    cursor: pointer;
-    background-color: #082032;
-    border-radius: 20px;
-    color: whitesmoke;
-}
-.connect-button:hover{
-    background-color : #000000;
-   color:white;
-   transition-duration: 0.3s;
+
+.navbar-buttons {
+    margin-top: -36px;
+    margin-right: 20px;
 }
 
-.connect-button1{
-    position: absolute;
-   top : 10px; 
-   right : 255px;
-    padding:10px;
-    cursor: pointer;
-    background-color: #082032;
-    border-radius: 20px;
+.navbar-buttons a{
     color: whitesmoke;
-}
-.connect-button1:hover{
-    background-color : #000000;
-   color:white;
-   transition-duration: 0.3s;
 }
 
-.connect-button2{
-    position: absolute;
-   top : 10px; 
-   right : 150px;
-    padding:10px;
+.navbar-buttons a:hover {
+    background-color : #000000;
+    color:white;
+    transition-duration: 0.3s;
+}
+
+.navbar-buttons li{
+    display: inline;
+    text-align: center;
+    float: right;
+    padding: 8px;
+    margin-right: 9px;
     cursor: pointer;
     background-color: #082032;
-    border-radius: 20px;
+    border-radius: 15px;
     color: whitesmoke;
 }
-.connect-button2:hover{
+
+.navbar-buttons li:hover{
     background-color : #000000;
-   color:white;
-   transition-duration: 0.3s;
+    color:white;
+    transition-duration: 0.3s;
 }

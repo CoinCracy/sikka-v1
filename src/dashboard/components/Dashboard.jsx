@@ -34,7 +34,7 @@ function Dashboard(props) {
   const history = useHistory();
 
   const  manage = (tokenAddress) => {
-    let path = `Dashboard/${tokenAddress}`; 
+    let path = `dashboard/${tokenAddress}`; 
     history.push(path);
   }
 
@@ -99,11 +99,9 @@ function Dashboard(props) {
   }, [connection, listInitialized, provider, providerLoaded]);
 
   return (
-    <>
-      <hr></hr>
+    <div className="dashboard-container">
       <h1  className="dashboardHeader"> 
           Dashboard 
-          {/* <Link to="/DEX" type="button">DEX</Link> */}
       </h1>
       
       {dataLoaded ? (
@@ -119,7 +117,7 @@ function Dashboard(props) {
       ) : (
         <h1 className="dashboardHeader">Loading...</h1>
       )}
-    </>
+    </div>
   );
 }
 

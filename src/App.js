@@ -9,9 +9,9 @@ import SikkaLandingPage from './dashboard/components/SikkaLandingPage.js';
 import Connect from './dashboard/components/Wallet';
 import Dashboard from './dashboard/components/Dashboard.jsx';
 import TokenDashboard from './dashboard/components/tokenDashboard';
-import DexApp from "./dex/App";
-import { ExchangeView } from './dex/components/exchange';
-import { getAllTokens } from './dex/utils/tokenAction';
+import {ExchangeView} from './dex/components/exchange';
+import Home from './dashboard/components/Home';
+import Navbar from './dashboard/components/Navbar';
 
 function App() {
 
@@ -20,27 +20,28 @@ const [token , setToken ] = useState({ mintAddress : null , accountAddress : nul
 
 
 return (
-   <>
 <Router>
-<Connect setProvider = {setProvider}/>
-
- <Route exact path='/' >
-   <SikkaLandingPage  setToken=  {setToken} provider = {provider}/>
- </Route>
- 
- <Route exact path='/Dashboard'>
- <Dashboard provider = {provider} />
- </Route>
-
- <Route exact path='/Dashboard/:id'>
-<TokenDashboard/>
- </Route>
-
- <Route exact path="/dex">
-   <ExchangeView/>
- </Route>
- </Router>
-   </>
+   <Route exact path='/'>
+      <Navbar />
+      <Home />
+   </Route>
+   <Route exact path='/app'>
+      <Connect setProvider = {setProvider}/>
+      <SikkaLandingPage  setToken=  {setToken} provider = {provider}/>
+   </Route>
+   <Route exact path='/dashboard'>
+      <Connect setProvider = {setProvider}/>
+      <Dashboard provider = {provider} />
+   </Route>
+   <Route exact path='/dashboard/:id'>
+      <Connect setProvider = {setProvider}/>
+      <TokenDashboard/>
+   </Route>
+   <Route exact path="/dex">
+      <Connect setProvider = {setProvider}/>
+      <ExchangeView/>
+   </Route>
+</Router>
   );
 }
 

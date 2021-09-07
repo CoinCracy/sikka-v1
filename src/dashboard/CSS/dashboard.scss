@@ -1,6 +1,7 @@
-body {
-    background-color: white;
+.dashboard-container {
+    height: calc(100vh - 85px);
 }
+
 .dashboardHeader {
     font-size: 24px;
     color: white;
