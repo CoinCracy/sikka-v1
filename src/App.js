@@ -9,9 +9,9 @@ import SikkaLandingPage from './dashboard/components/SikkaLandingPage.js';
 import Connect from './dashboard/components/Wallet';
 import Dashboard from './dashboard/components/Dashboard.jsx';
 import TokenDashboard from './dashboard/components/tokenDashboard';
-import DexApp from "./dex/App";
-import { ExchangeView } from './dex/components/exchange';
-import { getAllTokens } from './dex/utils/tokenAction';
+import {ExchangeView} from './dex/components/exchange';
+import Home from './dashboard/components/Home';
+import Navbar from './dashboard/components/Navbar';
 
 function App() {
 
@@ -24,9 +24,13 @@ return (
 <Router>
 <Connect setProvider = {setProvider}/>
 
- <Route exact path='/' >
-   <SikkaLandingPage  setToken=  {setToken} provider = {provider}/>
- </Route>
+   <Route exact path='/'>
+      <Navbar />
+      <Home />
+   </Route> 
+ <Route exact path='/app'>
+      <SikkaLandingPage  setToken=  {setToken} provider = {provider}/>
+   </Route>
  
  <Route exact path='/Dashboard'>
  <Dashboard provider = {provider} />

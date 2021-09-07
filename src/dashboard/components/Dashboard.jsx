@@ -34,7 +34,7 @@ function Dashboard(props) {
   const history = useHistory();
 
   const  manage = (tokenAddress) => {
-    let path = `Dashboard/${tokenAddress}`; 
+    let path = `dashboard/${tokenAddress}`; 
     history.push(path);
   }
 

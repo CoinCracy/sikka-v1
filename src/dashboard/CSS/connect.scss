@@ -1,22 +1,21 @@
 #navbar {
     height: 70px;
     padding: 10px;
-    display: flex;
+    position: relative;
 }
 #navbar h2 {
     margin : 0;
 }
-.navbarHead {
-
-}
 .sikkaHeader {
     display: flex;
+    margin-top: 10px;
     justify-self: center;
     align-self: center;
     .headerImage {
         margin: auto 10px auto 124px;
     }
     .header{
+        font-size: large;
         display: flex;
         align-self: center;
     }

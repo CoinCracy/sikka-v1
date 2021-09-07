@@ -8,6 +8,7 @@ import { AccountInfo } from "./accountInfo";
 import { Settings } from "./settings";
 import { SettingOutlined } from "@ant-design/icons";
 import { getAllTokens } from "../utils/tokenAction";
+import "../App.scss";
 
 
 export const ExchangeView = (props: {}) => {
@@ -88,7 +89,8 @@ export const ExchangeView = (props: {}) => {
 
   return (
     <>
-      {TopBar}
+    <div className="dex-container">
+    {TopBar}
       <Card
         className="exchange-card"
         headStyle={{ padding: 0 }}
@@ -103,6 +105,7 @@ export const ExchangeView = (props: {}) => {
       >
         {tabList.find((t) => t.key === activeTab)?.render()}
       </Card>
+    </div>
     </>
   );
 };

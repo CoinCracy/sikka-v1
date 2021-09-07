@@ -16,7 +16,6 @@ ReactDOM.render(
         <AccountsProvider>
           <CurrencyPairProvider>
             <App />
-            {/* <DexApp /> */}
           </CurrencyPairProvider>
         </AccountsProvider>
       </WalletProvider>

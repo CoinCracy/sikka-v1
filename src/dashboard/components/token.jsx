@@ -34,7 +34,7 @@ function TokenCreator(props) {
 
   
   const  dash = () => {
-    let path = `Dashboard`; 
+    let path = `dashboard`; 
     history.push(path);
   }
 

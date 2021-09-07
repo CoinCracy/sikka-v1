@@ -52,6 +52,7 @@ function SikkaLandingPage(props) {
                 <TokenCreator setToken=  {props.setToken} provider = {props.provider}/>
                 </div>
             </div>
+            </div>
          </div>
         </Fragment>
     )

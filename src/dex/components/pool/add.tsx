@@ -112,20 +112,6 @@ export const AddToLiquidity = () => {
 
   return (
     <div>
-      <Popover
-        trigger="hover"
-        content={
-          <div style={{ width: 300 }}>
-            Liquidity providers earn a fixed percentage fee on all trades
-            proportional to their share of the pool. Fees are added to the pool,
-            accrue in real time and can be claimed by withdrawing your
-            liquidity.
-          </div>
-        }
-      >
-        <Button type="text">Read more about providing liquidity.</Button>
-      </Popover>
-
       <CurrencyInput
         title="Input"
         onInputChange={(val: any) => {
