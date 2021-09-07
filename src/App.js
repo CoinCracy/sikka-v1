@@ -20,28 +20,29 @@ const [token , setToken ] = useState({ mintAddress : null , accountAddress : nul
 
 
 return (
+   <>
 <Router>
    <Route exact path='/'>
       <Navbar />
       <Home />
-   </Route>
-   <Route exact path='/app'>
+   </Route> 
+</Router>
+<Router>
       <Connect setProvider = {setProvider}/>
+   <Route exact path='/app'>
       <SikkaLandingPage  setToken=  {setToken} provider = {provider}/>
    </Route>
    <Route exact path='/dashboard'>
-      <Connect setProvider = {setProvider}/>
       <Dashboard provider = {provider} />
    </Route>
    <Route exact path='/dashboard/:id'>
-      <Connect setProvider = {setProvider}/>
       <TokenDashboard/>
    </Route>
    <Route exact path="/dex">
-      <Connect setProvider = {setProvider}/>
       <ExchangeView/>
    </Route>
 </Router>
+</>
   );
 }
 

@@ -86,16 +86,18 @@ function TokenDashboard(props) {
   return (
     <Fragment>
       <div className='main-container'>
-        <TabControls
-          menuItems={COIN_MANAGE_TABS}
-          selectedItem={activeTab}
-          containerClassName="searchResultMenu"
-          hidden={false}
-          onMenuItemClick={handleTabClick}
-        />
-        <div className="tabContainer">
-          <div className="tabs">
-            {renderTabContent()}
+        <div className='card-container'>
+          <TabControls
+            menuItems={COIN_MANAGE_TABS}
+            selectedItem={activeTab}
+            containerClassName="searchResultMenu"
+            hidden={false}
+            onMenuItemClick={handleTabClick}
+          />
+          <div className="tabContainer">
+            <div className="tabs">
+              {renderTabContent()}
+            </div>
           </div>
         </div>
       </div>
