@@ -11,6 +11,17 @@ input {
 
 #create-token {
 }
+.label{
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #9EA3A9;
+    margin: 4px 0px;
+    width: 16px;
+    height: 16px;
+}
 .formContainer {
     display: flex;
     flex-direction: column;
@@ -18,25 +29,16 @@ input {
         display: flex;
         flex-direction: column;
         .label{
-            font-family: sans-serif;
+            font-family: DM Sans;
             font-style: normal;
             font-weight: 500;
-            font-size: 16px;
+            font-size: 12px;
             line-height: 16px;
             color: #9EA3A9;
             margin: 4px 0px;
             width: 16px;
             height: 16px;
         }
-        .label3{
-            // font-family: DM Sans;
-             font-style: normal;
-             font-weight: 500;
-             font-size: 12px;
-             line-height: 16px;
-             color: #9EA3A9;
-             margin: 4px 0px;
-         }
         .decimals {
             align-items: center;
             padding: 4px 12px;
@@ -89,14 +91,4 @@ input {
     justify-content: center;
     flex-direction: column;
     // margin-top: 72px;
-}
-.label2{
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 16px;
-    color: #9EA3A9;
-    margin: 4px 0px;
-
 }

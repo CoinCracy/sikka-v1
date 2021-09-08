@@ -91,6 +91,14 @@ export default function Connect(props : any) {
  
       </div>
       <div className="mt-5 flex lg:mt-0 lg:ml-4">
+      <span className="hidden sm:block">
+          <button
+           
+            className="inline-flex items-center px-4 py-2 duration-200 hover:text-black rounded-md shadow-sm hover:shadow-md text-sm font-medium text-gray-700 bg-white "
+          >
+             <Link to="/app" type="button">App</Link>
+          </button>
+        </span>
         <span className="hidden sm:block">
           <button
            
@@ -99,7 +107,6 @@ export default function Connect(props : any) {
              <Link to="/Dashboard" type="button">Dashboard</Link>
           </button>
         </span>
-
         <span className="hidden sm:block ml-3">
           <button
             className="inline-flex items-center px-4 py-2 duration-200 hover:text-indigo-800 rounded-md hover:shadow-md shadow-sm text-sm font-medium text-gray-700 bg-white "

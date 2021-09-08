@@ -46,10 +46,17 @@ function SikkaLandingPage(props) {
     }
     return (
         <Fragment>
-        <div className = 'main-container bg-white font-sans shadow-xl rounded-lg p-8'>
-            <div className="tabContainer ">
+        <div className = 'main-container bg-white font-sans shadow-lg rounded-lg p-8'>
+            <TabControls
+                menuItems={COIN_TYPE_TABS}
+                selectedItem={activeTab}
+                containerClassName="searchResultMenu"
+                hidden={false}
+                onMenuItemClick={handleTabClick}
+            />
+            <div className="tabContainer">
                 <div className="tabs">
-                <TokenCreator setToken=  {props.setToken} provider = {props.provider}/>
+                    {renderTabContent()}
                 </div>
             </div>
          </div>

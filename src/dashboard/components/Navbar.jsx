@@ -21,14 +21,6 @@ return (
           </div>
         </div>
       </div>
-      <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-        <a href="/app" className="font-medium text-indigo-500 hover:text-white duration-500">App</a>
-        <a href="/dex" className="font-medium text-gray-500 hover:text-white duration-500">Exchange</a>
-      </div>
-      <a href="#">
-        <span className="sr-only">Sikka</span>
-            <img className="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"></img>
-          </a>
     </nav>
   </div>
 )
