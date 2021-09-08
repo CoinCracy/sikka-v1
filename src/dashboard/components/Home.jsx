@@ -47,25 +47,25 @@ const uses = [
     {
       name: 'Creator',
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+        "Build your own economy without relying on social media gaints by turning your fans into investors",
       icon: creator,
     },
     {
       name: 'Community',
       description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        'Initiate Fancoins for your favourite creator and get bragging rights and profit once the creator gets on the platform ',
       icon: community,
     },
     {
       name: 'Individual',
       description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        'Tokenize yourself with informational collateral to fund anything from your dream project to higher studies ',
       icon: individual,
     },
     {
       name: 'Enterprise',
       description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        'Raise funds through token for startups or nonprofit causes and even create loyalty based engagement experince',
       icon: enterprise,
     },
   ]
@@ -154,7 +154,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-indigo-100 sm:text-4xl">
-           You are limitless and so are we!
+          Create and Trade Your Cryptocurrency under a Minute
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto">
            We built sikka for everyone and anything. The only limitation it has is your imagination.
