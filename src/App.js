@@ -23,9 +23,7 @@ return (
    <>
 <Router>
 <Connect setProvider = {setProvider}/>
-
    <Route exact path='/'>
-      <Navbar />
       <Home />
    </Route> 
  <Route exact path='/app'>
