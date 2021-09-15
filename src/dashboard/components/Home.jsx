@@ -47,25 +47,25 @@ const uses = [
     {
       name: 'Creator',
       description:
-        "Build your own economy without relying on social media giants by turning your fans into investors",
+        "Build your own economy without relying on social media giants by turning your fans into investors.",
       icon: creator,
     },
     {
       name: 'Community',
       description:
-        'Initiate Fancoins for your favourite creator and get bragging rights and profit once the creator gets on the platform ',
+        'Create your own little village, with your own economy and your own rules. The possibilities are endless. ',
       icon: community,
     },
     {
       name: 'Individual',
       description:
-        'Tokenize yourself with informational collateral to fund anything from your dream project to higher studies ',
+        'Tokenize yourself with informational collateral to fund anything from your dream project to your education. ',
       icon: individual,
     },
     {
       name: 'Enterprise',
       description:
-        'Raise funds through token for startups or nonprofit causes and even create loyalty based engagement experience',
+        'Raise funds through token for startups or nonprofit causes and even create loyalty based engagement experience.',
       icon: enterprise,
     },
   ]
@@ -75,15 +75,15 @@ export default function Home() {
       <>
 {/* Use Cases  */}
 
-    <div className="py-12 bg-black">
+    <div className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <p className="mt-2 text-10xl leading-8 font-extrabold tracking-tight text-indigo-150 sm:text-4xl"> Sikka </p>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-indigo-100 sm:text-4xl">
-          Create and Trade Your Cryptocurrency under a Minute
+
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-indigo-500 sm:text-4xl">
+        Democratizing Fungibility
           </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto">
-           We built sikka for everyone and anything. The only limitation it has is your imagination.
+          <p className="mt-4 max-w-2xl text-xl text-gray-400 lg:mx-auto">
+          Sikka is a platform that lets you create your own cryptotoken and open a whole new world of possibilities. 
           </p>
         </div>
 

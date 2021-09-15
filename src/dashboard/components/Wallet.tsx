@@ -47,7 +47,6 @@ const getProvider = (): PhantomProvider | undefined => {
       return provider;
     }
   }
-  // window.open("https://phantom.app/", "_blank");
 };
 
 
@@ -87,19 +86,11 @@ export default function Connect(props : any) {
 
 <div className="lg:flex lg:items-center lg:justify-between  p-2 ">
       <div className="flex-1 min-w-0">
-      <img src="sikka2.png" style={{maxWidth:"15%"}}/>
+      <p className="text-indigo-600 font-extrabold font-mono ml-10 text-lg ">Sikka</p>
  {/*className ="bg-indigo-800 w-10 h-10 ml-20 rounded-full" */}
       </div>
       <div className="mt-5 flex lg:mt-0 lg:ml-4">
-      <span className="hidden sm:block">
-          <button
-           
-            className="inline-flex items-center px-4 py-2 duration-200 hover:text-black rounded-md shadow-sm hover:shadow-md text-sm font-medium text-gray-700 bg-white "
-          >
-             <Link to="/" type="button">Home</Link>
-          </button>
-        </span>
-
+    
       <span className="hidden sm:block">
           <button
            
@@ -108,14 +99,7 @@ export default function Connect(props : any) {
              <Link to="/app" type="button">App</Link>
           </button>
         </span>
-        <span className="hidden sm:block">
-          <button
-           
-            className="inline-flex items-center px-4 py-2 duration-200 hover:text-black rounded-md shadow-sm hover:shadow-md text-sm font-medium text-gray-700 bg-white "
-          >
-             <Link to="/Dashboard" type="button">Dashboard</Link>
-          </button>
-        </span>
+  
         <span className="hidden sm:block ml-3">
           <button
             className="inline-flex items-center px-4 py-2 duration-200 hover:text-indigo-800 rounded-md hover:shadow-md shadow-sm text-sm font-medium text-gray-700 bg-white "
